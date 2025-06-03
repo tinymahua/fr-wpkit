@@ -223,8 +223,10 @@ class _HomePageState extends State<HomePage> {
               children: [
                 ElevatedButton(
                   onPressed: () async{
-                    await checkSetting();
-                    presentAppConfig();
+                    var settingCheckedOk = await checkSetting();
+                    if (settingCheckedOk){
+                      presentAppConfig();
+                    }
                   },
                   child: Text('检测设置'),
                 ),
@@ -236,10 +238,11 @@ class _HomePageState extends State<HomePage> {
                 //         _checkConfigTimer =
                 //       });
                 //     }: null, child: Text('启动')),
-                // ElevatedButton(
-                //     onPressed: settingCheckedOk ? (){
-                //       stopListen();
-                //     }: null, child: Text('停止'))
+                SizedBox(width: 10,),
+                ElevatedButton(
+                    onPressed: (){
+                      _sharedPreferences!.clear();
+                    }, child: Text('清空缓存'))
               ],
             ),
             Row(
@@ -247,9 +250,6 @@ class _HomePageState extends State<HomePage> {
                 Expanded(child: Divider())
               ],
             ),
-            Expanded(child: Row(
-              children: [Expanded(child: MultiColumnListView(columnWidths: columnWidths, columnTitles: columnTitles, rowCellsBuilder: rowCellsBuilder))],
-            ))
           ],
         ),
       ),
