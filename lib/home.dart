@@ -4,7 +4,6 @@ import 'dart:io';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:fr_wpkit/isolates/wp_worker.dart';
-import 'package:multi_column_list_view/multi_column_list_view.dart';
 import 'package:path/path.dart' as p;
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:top_modal_sheet/top_modal_sheet.dart';
@@ -142,7 +141,7 @@ class _HomePageState extends State<HomePage> {
         });
       }else{
         setState(() {
-          _statusMsg = '安装目录检测未通过[请随机预览一次或重新设置]';
+          _statusMsg = '安装目录检测未通过[打开一次或重新设置]';
         });
       }
     });
