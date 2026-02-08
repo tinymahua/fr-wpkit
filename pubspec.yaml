@@ -1,4 +1,4 @@
-name: fr_wpkit
+name: iWallpaper
 description: "A new Flutter project."
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
@@ -46,11 +46,8 @@ flutter:
     - assets/icons/app.png
 
 msix_config:
-  display_name: WpKit
-  publisher_display_name: ToT
-  identity_name: company.tot
-  msix_version: 0.0.0.1
+  display_name: iWallpaper
+  msix_version: 1.0.0.0
+  certificate_path: C:\Users\Maple\Documents\bluesky.pfx
+  certificate_password: bluesky
   logo_path: D:\CodeHome\fr_wpkit\assets\icons\app.png
-inno_bundle:
-  id: 48ed05d0-4080-11f0-8a8b-fd5362228f12
-  publisher: Maple
